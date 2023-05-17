@@ -1,5 +1,7 @@
 package jcolonia.daw2022.mayo;
 
+import java.util.Scanner;
+
 /**
  * Gestión de números de teléfono.
  * 
@@ -7,6 +9,7 @@ package jcolonia.daw2022.mayo;
  * @version 2023.3.2_incompleta (20230516)
  */
 public class ControlAgenda {
+	Scanner scConsola;
 	/**
 	 * Texto identificativo de las funciones de la aplicación que aparecerán en el
 	 * menú principal.
@@ -83,11 +86,24 @@ public class ControlAgenda {
 			}
 		} while (!fin);
 	}
+	
+	/**
+	 * Pide al usuario los datos(telefono y nombre) para el nuevo telefono
+	 * @throws VistaException si el gestor de la entrada ya estuviera definido
+	 */
 
-	private void cargarTeléfono() {
+	private void cargarTeléfono() throws VistaException {
+		AgendaTeléfonos nuevoTelefono;
+				
+				VistaAlta formulario = new VistaAlta("Introducir los datos ", scConsola);
+				
+				System.out.printf("\t Introduzca los datos del alumno y pulse «Enter» cuando terminas%n%n");
+				nuevoTelefono =formulario.cargarAlumno();
 		
-		
-	}
+		//	almacenAlumnos.añadir(nuevoAlumno);
+				
+				System.out.printf("%s%n", nuevoTelefono);
+			}
 
 	/**
 	 * Proporciona al usuario un mensaje informativo sobre la opción elegida.
