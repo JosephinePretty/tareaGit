@@ -64,9 +64,9 @@ public class ControlAgenda {
 				fin = true;
 				Vista.mostrarAviso("¡¡¡A-D-I-O-S!!");
 				break;
-			//case 1: // Opción 1: Entrada datos
-			//	cargarTeléfono();
-			//	break;
+			case 1: // Opción 1: Entrada datos
+				cargarTeléfono();
+				break;
 			//case 2: // Opción 2: Mostrar listado
 			//	mostrarAgenda();
 			//	break;
@@ -82,6 +82,11 @@ public class ControlAgenda {
 				System.exit(1);
 			}
 		} while (!fin);
+	}
+
+	private void cargarTeléfono() {
+		
+		
 	}
 
 	/**
