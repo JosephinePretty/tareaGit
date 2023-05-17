@@ -49,8 +49,9 @@ public class ControlAgenda {
 
 	/**
 	 * Gestiona el menú principal y ejecuta las operaciones elegidas.
+	 * @throws VistaException si el gestor de la entrada ya estuviera definido
 	 */
-	private void buclePrincipal() {
+	private void buclePrincipal() throws VistaException {
 		int opciónElegida;
 		boolean fin = false;
 
@@ -121,8 +122,9 @@ public class ControlAgenda {
 	 * Activa el programa con el menú principal.
 	 * 
 	 * @param argumentos opciones en la línea de ejecución —no se usan—
+	 * @throws VistaException si el gestor de la entrada ya estuviera definido
 	 */
-	public static void main(String[] argumentos) {
+	public static void main(String[] argumentos) throws VistaException {
 		ControlAgenda control = new ControlAgenda();
 		control.buclePrincipal();
 	}
