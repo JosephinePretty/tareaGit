@@ -5,9 +5,15 @@ package jcolonia.daw2022.mayo;
 
 /**
  * @author dawm1-04 
+ * @version -8506907100663702023L
  *
  */
 public class DatosException extends Exception {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8506907100663702023L;
 
 	/**
 	 * Crea una nueva excepción sin ningún contenido. No contiene ningún texto

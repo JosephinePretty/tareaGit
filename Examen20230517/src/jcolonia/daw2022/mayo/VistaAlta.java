@@ -7,7 +7,7 @@ import java.util.Scanner;
  * @author <a href= "mailto:josephinepretty828@gmail.com">Marie josephine</a>
  * @version  (20230428)
  */
-public class VistaAlta extends VistaGeneral{
+public class VistaAlta extends Vista{
 
 //	/**
 //	 * 
@@ -19,8 +19,9 @@ public class VistaAlta extends VistaGeneral{
 	 * 
 	 * @param nombre el texto correspondiente
 	 * @param sc zxcv
+	 * @throws VistaException  si el gestor de la entrada ya estuviera definido
 	 */
-	public VistaAlta(String nombre,Scanner sc) {
+	public VistaAlta(String nombre,Scanner sc) throws VistaException {
 		super(nombre, sc);
 	}
 
@@ -47,8 +48,8 @@ public class VistaAlta extends VistaGeneral{
 	AgendaTeléfonos nuevoAlumno;
 	nuevoAlumno=new AgendaTeléfonos();
 		
-			String nombre = pedirTexto("Introduce su nombre");
-			Integer núm = pedirEntero("Introduce su telefono");
+			Integer núm = pedirEntero("Introduzca un nuevo telefono");
+			String nombre = pedirTexto("Introduzca el nombre nombre");
 			nuevoAlumno.añadir(nombre, núm);
 			return nuevoAlumno;
 		

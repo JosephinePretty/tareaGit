@@ -26,7 +26,7 @@ public class VistaMenúBásico extends Vista {
 	 * @param título       el texto correspondiente
 	 * @param opcionesMenú la lista de textos para las opciones
 	 * @param sc jkjkl
-	 * @throws VistaException cuando
+	 * @throws VistaException  si el gestor de la entrada ya estuviera definido
 	 */
 	public <T> VistaMenúBásico(String título, T[] opcionesMenú, Scanner sc) throws VistaException {
 		super(título, sc);
