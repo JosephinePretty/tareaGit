@@ -1,5 +1,7 @@
 package jcolonia.daw2022.mayo;
 
+import java.nio.file.Path;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -74,12 +76,12 @@ public class ControlAgenda {
 			case 2: // Opción 2: Mostrar listado
 				mostrarAgenda();
 				break;
-			//case 3: // Opción 3: Mostrar estado
-			//	mostrarEstado();
-			//	break;
-			//case 4: // Opción 4: Reset
-			//	restablecer();
-			//	break;
+			case 3: // Opción 3: Mostrar estado
+				mostrarEstado();
+				break;
+			case 4: // Opción 4: Reset
+				restablecer();
+				break;
 			default: // Opción no esperada: abortar
 				ejecutarGenérico(opciónElegida);
 				Vista.mostrarError("Error interno de programa - operación pendiente de desarrollo");
@@ -89,13 +91,23 @@ public class ControlAgenda {
 	}
 	
 	/**
-	 * Devuelve un listado de los telefonos ya exixtante en la agenda de telefonos
+	 * Borrar Todos los telefonos
 	 */
-	private void mostrarAgenda() {
-		VistaListado entrada = new VistaListado(agenda);
-		entrada.mostrarTextos(agenda);
+	private void restablecer() {
+		List<String> telefonos = agenda.toListaTextos();
+		telefonos.removeAll(telefonos);
 		
 	}
+
+	/**
+	 * Mostra el estado de la Agenda
+	 */
+//		private void exportarAlumnos() {
+//			Path lista;
+//			AccesoArchivoCSV exportar = new AccesoArchivoCSV(lista);
+//			exportar.grabarTextos(agenda.toListaTextos(),"Archivo.txt");
+//			
+//		}
 
 	/**
 	 * Pide al usuario los datos(telefono y nombre) para el nuevo telefono
@@ -112,9 +124,36 @@ public class ControlAgenda {
 		
 		//	almacenAlumnos.añadir(nuevoAlumno);
 				System.out.printf("\t→%d telefono en el agenda %n", agenda.tamaño());
-				formulario.pedirContinuar();
+				Vista.pedirContinuar();
 			}
+		
+		/**
+		 * Devuelve un listado de los telefonos ya exixtante en la agenda de telefonos
+		 */
+		private void mostrarAgenda() {
+			VistaListado entrada = new VistaListado(agenda);
+			entrada.mostrarTextos(agenda);
+			
+		}
 
+		private void mostrarEstado() {
+			
+			System.out.printf("\t→%d telefono en el agenda %n", agenda.tamaño());
+			for(int i=0; i<agenda.tamaño(); i++) {
+				if(agendaFueImportada=true) {
+					System.out.printf("Esta Agenda ha sido importada");
+				}else {
+					System.out.printf("Esta Agenda no ha sido importada");
+				}
+				if(agendaFueExportada=true) {
+					System.out.printf("Esta Agenda ha sido exportada");
+				}else {
+					System.out.printf("Esta Agenda no ha sido exportada");
+				}
+				
+			}
+			
+		}
 	/**
 	 * Proporciona al usuario un mensaje informativo sobre la opción elegida.
 	 * Operación «comodín» a ejecutar para opciones no implementadas.
