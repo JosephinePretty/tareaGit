@@ -10,7 +10,7 @@ import java.util.Scanner;
  * @author Josephine;
  *
  */
-public class VistaMenú extends VistaGeneral {
+public class VistaMenúBásico extends Vista {
 	
 	/**
 	 * Lista de opciones a elegir.
@@ -26,8 +26,9 @@ public class VistaMenú extends VistaGeneral {
 	 * @param título       el texto correspondiente
 	 * @param opcionesMenú la lista de textos para las opciones
 	 * @param sc jkjkl
+	 * @throws VistaException cuando
 	 */
-	public <T> VistaMenú(String título, T[] opcionesMenú, Scanner sc) {
+	public <T> VistaMenúBásico(String título, T[] opcionesMenú, Scanner sc) throws VistaException {
 		super(título, sc);
 
 		opciones = new ArrayList<>();
@@ -41,13 +42,13 @@ public class VistaMenú extends VistaGeneral {
 	 * Muestra por pantalla el menú al usuario. 
 	 * 
 	 * @param opcionesMenúEjemplo son opciones a elegir.
-	 * @param sc d
+	 * @param títuloMenúPrincipal d
 	 * 
 	 */ 
 	 
-	public VistaMenú(Scanner sc, String[] opcionesMenúEjemplo) {
+	public VistaMenúBásico(String títuloMenúPrincipal, String[] opcionesMenúEjemplo) {
 		
-		 super (sc);	
+		 super ( títuloMenúPrincipal);	
 //	opciones = new ArrayList<>(Arrays.asList(opcionesMenúEjemplo));
 		opciones = new ArrayList<>();
 		 

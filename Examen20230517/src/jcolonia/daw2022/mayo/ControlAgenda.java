@@ -56,7 +56,7 @@ public class ControlAgenda {
 		// Bucle general
 		do {
 			menúPrincipal.mostrarTítulo1();
-			menúPrincipal.mostrarOpciones();
+			menúPrincipal.mostrarOpciones("Elige una opción");
 			opciónElegida = menúPrincipal.pedirOpción();
 			switch (opciónElegida) {
 			case 0:
