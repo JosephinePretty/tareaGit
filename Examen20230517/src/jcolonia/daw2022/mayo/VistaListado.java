@@ -13,17 +13,6 @@ import java.io.PrintWriter;
  * @versión 20231204
  */
 public class VistaListado{
-	
-//	/**
-//	 * Inicializa la vista recogiendo el nombre/título a asignar. El acceso único
-//	 * compartido a la entrada estándar permanece inalterado.
-//	 * 
-//	 * @param nombre el texto identificador
-//	 * @see #getEntrada()
-//	 */
-//	public VistaListado(String nombre) {
-//		super(nombre);
-//	}
 	/**
 	 * Colección de textos.
 	 */
@@ -72,11 +61,7 @@ public class VistaListado{
 	 * @param es    la escuela.
 	 */
 	public void mostrarTextos(AgendaTeléfonos es) {
-//		int i = 1;
-//		for (Escuela nuevoAlumno : es) {
-//			System.out.printf("%n-%d:%s %n", i++, nuevoAlumno);
-//		}
-//		
+		
 		for(int j=0; j<es.tamaño();j++) {
 			System.out.printf("%d:%s%n",j, es.toListaTextos());
 		}
