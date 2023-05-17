@@ -65,9 +65,9 @@ public abstract class Vista {
 	 * @throws VistaException si el gestor de la entrada ya estuviera definido
 	 */
 	public Vista(String nombre, Scanner scEntrada) throws VistaException {
-		if (Vista.scEntrada != null) {
-			throw new VistaException("El acceso a la entrada estándar ya estaba definido");
-		}
+//		if (Vista.scEntrada != null) {
+//			throw new VistaException("El acceso a la entrada estándar ya estaba definido");
+//		}
 
 		Vista.scEntrada = scEntrada;
 		this.nombre = nombre;

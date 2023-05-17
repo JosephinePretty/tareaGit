@@ -40,7 +40,7 @@ public class VistaAlta extends Vista{
 	 * Carga los datos del alumno introducido en el almacen.
 	 * @return los datos en pantalla.
 	 */
-	public AgendaTeléfonos cargarAlumno() {
+	public AgendaTeléfonos cargarTelefono() {
 		
 //		sc = new Scanner(System.in);
 //		lista= new Vector<>();
