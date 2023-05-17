@@ -1,0 +1,85 @@
+@startuml
+skinparam shadowing false
+package "mayo"{
+
+class AgendaTeléfonos{
+-lista:Map<Integer,String>
++AgendaTeléfonos()
++tamaño():int
++añadir(nombre:String, número:Integer):void
++existeTeléfono(número:Integer):void
++buscar(nombre:String):void
++toListaTextos():List<String>
++validarTeléfono(nombre:String):int
+}
+
+class ControlAgenda{
+-OPCIONES_MENU_PRINCIPAL:String[]
+-scConsola:Scanner
+-agenda:AgendaTeléfonos
+-agendaFueImportada:boolean
+agendaFueExportada:boolean
+-agendaFueBorrada:boolean
+-menúPrincipal:VistaMenúBásico
++ControlAgenda()
++buclePrincipal():void
++cargarTeléfono():void
++mostrarAgenda():void
++mostrarEstado():void
++ejecutarGenerico(id:int):void
++ {static} main(argumentos:String[*])
+}
+
+class Vista{
+- {static} TEXTO_PREGUNTA:String
+-sc:Scanner
+-nombre:String
++vista(nombre:String)
++vista(nombre:String, sc:Scanner)
++vista(sc:Scanner)
++getEntrada():Scanner
+++mostrarTítulo(destacado: boolean):void
++mostrarTítulo1():void
++mostrarTítulo2():void
++mostrarTexto(texto:String):void
++mostrarAviso(texto:String):void
++mostrarPregunta(pregunta:String):void
++capitalizar(texto:String):void
++mostrarError(texto:String):void
+generarBorde(c:char, longitud:int):String
++{static}pedirNumero():int
++pedirEntero(pregunta:String, valorMin:int, valorMax:int)
+pedirTexto(pregunta:String)
++{static}pedirConfirmación()
++{static}pedirContinuar()
+}
+class VistaMenúBásico {
++opciones : ArrayList<String>
++VistaMenúBásico (String, opcionesMenú:T[], sc:Scanner):<T>
++VistaMenúBásico (sc:Scanner, opcionesMenúEjemplo:String[])
++mostrarOpciones(pregunta:String):void
++pedirOpción():int
+}
+class Vistalistado{
++listaTextos:AgendaTeléfonos
++vistalistado(AlmacenAlumnos:AgendaTeléfonos)
++cargarTextos():AgendaTeléfonos
++mostrarTextos(es:AgendaTeléfonos)
+}
+class VistaAlta {
++vistaAlta(nombre:String, sc:Scanner)
++cargarAlumno():AgendaTeléfonos
+}
+class VistaException{}
+class DatosException{}
+
+ControlAgenda..|>VistaAlta:usa
+Vista..|>VistaException:usa
+ControlAgenda..|>DatosException:usa
+Vista<|--Vistalistado:es un
+Vista<|--VistaMenúBásico:es un
+Vista<|--VistaAlta:es un
+ControlAgenda..|>AgendaTeléfonos:usa
+}
+
+@enduml
