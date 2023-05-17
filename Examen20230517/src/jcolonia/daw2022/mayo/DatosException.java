@@ -4,7 +4,7 @@
 package jcolonia.daw2022.mayo;
 
 /**
- * @author dawm1-04
+ * @author dawm1-04 
  *
  */
 public class DatosException extends Exception {
